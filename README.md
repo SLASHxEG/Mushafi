@@ -9,7 +9,7 @@
 ![Free](https://img.shields.io/badge/Price-Free-orange)
 [![Microsoft Store](https://img.shields.io/badge/Microsoft%20Store-Available-blue?logo=microsoftstore)](https://apps.microsoft.com/detail/9MVWH2THS8S2)
 
-**[⬇️ Direct Download](https://github.com/Youssef-mohamed-developer/Mushafi/releases) • [🏪 Microsoft Store](https://apps.microsoft.com/detail/9MVWH2THS8S2)**
+**[⬇️ Direct Download](https://github.com/Youssef-mohamed-developer/Mushafi/releases/latest) • [🏪 Microsoft Store](https://apps.microsoft.com/detail/9MVWH2THS8S2)**
 
 ---
 
@@ -118,11 +118,12 @@ Once your desired content is downloaded, the application works **fully offline**
 
 ## Option 1 — Direct Download
 
-1. Click **`Mushafi-Setup-x.x.x.exe`** in the repository files.
-2. Press the **Download raw file** button.
-3. Run the installer.
-4. Follow the installation steps.
-5. Launch **Mushafi** from your desktop or Start Menu.
+1.[⬇️ Direct Download](https://github.com/Youssef-mohamed-developer/Mushafi/releases/latest)
+2. Click **`Mushafi-Setup-x.x.x.exe`** in the repository files.
+3. Press the **Download raw file** button.
+4. Run the installer.
+5. Follow the installation steps.
+6. Launch **Mushafi** from your desktop or Start Menu.
 
 > **Note:** If Windows SmartScreen appears, click **More info → Run anyway**. This only happens because the application is new and not yet commercially code-signed.
 
