@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — mushafi · مصحفي</title>
+<meta name="description" content="Privacy policy for mushafi - مصحفي, a Quran reading app. No accounts, no advertising, no tracking cookies.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="https://sourcemirrors.org/hosted/52569-mushafiocean.png">
+
+<meta property="og:title" content="Privacy Policy — mushafi · مصحفي">
+<meta property="og:description" content="What we collect, what we don't, and how we handle any data.">
+<meta property="og:image" content="https://sourcemirrors.org/hosted/52569-mushafiocean.png">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;600&display=swap">
+
+<style>
+  /* ── Tokens ──────────────────────────────────────────────────────────
+     An ocean palette, after the app's own icon. Every colour is declared
+     here first so the dark block below only has to redefine, never invent. */
+  :root {
+    --paper:      #f6f9fc;
+    --surface:    #ffffff;
+    --surface-2:  #eef4fa;
+    --rule:       #d9e4ef;
+    --rule-soft:  #e8eff6;
+
+    --ink:        #0b1a2e;
+    --ink-2:      #3d5570;
+    --ink-3:      #6b829c;
+
+    --accent:     #0369a1;
+    --accent-2:   #0284c7;
+    --accent-wash:#e0f0fa;
+
+    --good:       #14705a;
+    --good-wash:  #e2f2ed;
+
+    --shadow-sm:  0 1px 2px rgba(11, 26, 46, .06);
+    --shadow-lg:  0 24px 60px -28px rgba(11, 26, 46, .35);
+
+    --display: "Newsreader", Georgia, "Times New Roman", serif;
+    --body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --arabic: "Noto Naskh Arabic", "Segoe UI", serif;
+
+    --measure: 66ch;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper:      #070e1a;
+      --surface:    #0d1828;
+      --surface-2:  #122034;
+      --rule:       #1e3149;
+      --rule-soft:  #172740;
+
+      --ink:        #e6effb;
+      --ink-2:      #aabed6;
+      --ink-3:      #7b93b0;
+
+      --accent:     #58b7ea;
+      --accent-2:   #7cc9f2;
+      --accent-wash:#10283f;
+
+      --good:       #6fcfae;
+      --good-wash:  #0e2a23;
+
+      --shadow-sm:  0 1px 2px rgba(0, 0, 0, .4);
+      --shadow-lg:  0 24px 60px -28px rgba(0, 0, 0, .8);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Masthead ───────────────────────────────────────────────────── */
+
+  .masthead {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(120% 140% at 82% -10%, var(--accent-wash) 0%, transparent 62%),
+      var(--surface);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .masthead-inner {
+    max-width: 62rem;
+    margin: 0 auto;
+    padding: 3.25rem 1.5rem 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    inline-size: 84px;
+    block-size: 84px;
+    flex: none;
+    border-radius: 22px;
+    box-shadow: var(--shadow-lg);
+    background: var(--surface);
+  }
+
+  .masthead h1 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(1.9rem, 4.5vw, 2.7rem);
+    line-height: 1.1;
+    letter-spacing: -.015em;
+    margin: 0 0 .3rem;
+    text-wrap: balance;
+  }
+
+  .wordmark {
+    display: flex;
+    align-items: baseline;
+    gap: .55rem;
+    flex-wrap: wrap;
+    font-size: 1.05rem;
+    color: var(--ink-2);
+  }
+
+  .wordmark .ar {
+    font-family: var(--arabic);
+    font-size: 1.3rem;
+    direction: rtl;
+  }
+
+  .dates {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+    margin-top: 1.1rem;
+  }
+
+  .date-chip {
+    display: inline-flex;
+    align-items: baseline;
+    gap: .4rem;
+    padding: .32rem .7rem;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    background: var(--surface);
+    font-size: .8rem;
+    color: var(--ink-2);
+  }
+
+  .date-chip b {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ── Layout ─────────────────────────────────────────────────────── */
+
+  .wrap {
+    max-width: 62rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+    display: grid;
+    grid-template-columns: 15rem minmax(0, 1fr);
+    gap: 3rem;
+    align-items: start;
+  }
+
+  @media (max-width: 860px) {
+    .wrap {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  /* ── Contents ───────────────────────────────────────────────────── */
+
+  .toc {
+    position: sticky;
+    top: 1.5rem;
+    padding: 1.1rem 1.15rem;
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+  }
+
+  @media (max-width: 860px) {
+    .toc { position: static; }
+  }
+
+  .toc h2 {
+    font-family: var(--body);
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin: 0 0 .7rem;
+  }
+
+  .toc ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: toc;
+    display: flex;
+    flex-direction: column;
+    gap: .1rem;
+  }
+
+  .toc a {
+    display: block;
+    padding: .3rem .45rem;
+    border-radius: 8px;
+    color: var(--ink-2);
+    text-decoration: none;
+    font-size: .87rem;
+    line-height: 1.45;
+  }
+
+  .toc a:hover { background: var(--surface-2); color: var(--ink); }
+  .toc a:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+  /* ── Prose ──────────────────────────────────────────────────────── */
+
+  main { min-width: 0; }
+
+  .lede {
+    font-family: var(--display);
+    font-size: 1.18rem;
+    line-height: 1.6;
+    color: var(--ink-2);
+    max-width: var(--measure);
+    margin: 0 0 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  section { scroll-margin-top: 1.5rem; margin-bottom: 2.75rem; }
+
+  h2 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 1.5rem;
+    letter-spacing: -.01em;
+    line-height: 1.25;
+    margin: 0 0 .85rem;
+    text-wrap: balance;
+    display: flex;
+    align-items: baseline;
+    gap: .65rem;
+  }
+
+  /* The section number as a quiet marker rather than part of the sentence.
+     These are numbered because a privacy policy is cited by clause. */
+  h2 .num {
+    flex: none;
+    font-family: var(--body);
+    font-size: .78rem;
+    font-weight: 700;
+    color: var(--accent);
+    background: var(--accent-wash);
+    padding: .12rem .5rem;
+    border-radius: 6px;
+    letter-spacing: .02em;
+  }
+
+  p { margin: 0 0 1rem; max-width: var(--measure); color: var(--ink-2); }
+
+  main strong { color: var(--ink); font-weight: 600; }
+
+  ul { margin: 0 0 1rem; padding-inline-start: 0; list-style: none; max-width: var(--measure); }
+
+  li {
+    position: relative;
+    padding-inline-start: 1.4rem;
+    margin-bottom: .5rem;
+    color: var(--ink-2);
+  }
+
+  li::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: .35rem;
+    top: .72em;
+    inline-size: 5px;
+    block-size: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: .55;
+  }
+
+  /* ── The declaration ────────────────────────────────────────────────
+     Section 2 is the promise the whole document exists to make, so it is
+     the one block that is drawn rather than merely set. */
+  .declaration {
+    padding: 1.4rem 1.5rem;
+    border: 1px solid color-mix(in srgb, var(--good) 28%, transparent);
+    border-inline-start: 4px solid var(--good);
+    border-radius: 14px;
+    background: var(--good-wash);
+  }
+
+  .declaration p:last-of-type,
+  .declaration ul { margin-bottom: 0; }
+
+  .declaration li::before {
+    background: var(--good);
+    opacity: .8;
+  }
+
+  /* ── Contact ────────────────────────────────────────────────────── */
+
+  .contact {
+    padding: 1.4rem 1.5rem;
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .contact a {
+    font-family: var(--body);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    word-break: break-all;
+  }
+
+  .contact a:hover { text-decoration: underline; }
+  .contact a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  /* ── Footer ─────────────────────────────────────────────────────── */
+
+  footer {
+    border-top: 1px solid var(--rule);
+    background: var(--surface);
+  }
+
+  .footer-inner {
+    max-width: 62rem;
+    margin: 0 auto;
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: .85rem;
+    color: var(--ink-3);
+  }
+
+  .footer-inner .ar { font-family: var(--arabic); }
+
+  /* ── Print ──────────────────────────────────────────────────────────
+     A privacy policy gets printed and attached to things. */
+  @media print {
+    body { background: #fff; color: #000; font-size: 11pt; }
+    .toc, .masthead { break-inside: avoid; }
+    .toc { display: none; }
+    .wrap { display: block; max-width: none; padding: 0; }
+    .masthead { border-bottom: 1px solid #ccc; }
+    .declaration, .contact { border: 1px solid #999; background: none; }
+    section { break-inside: avoid; }
+    a { color: #000; text-decoration: underline; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <img class="logo" src="https://sourcemirrors.org/hosted/52569-mushafiocean.png"
+         alt="mushafi app icon" width="84" height="84">
+    <div>
+      <h1>Privacy Policy</h1>
+      <div class="wordmark">
+        <span>mushafi</span>
+        <span aria-hidden="true">·</span>
+        <span class="ar" lang="ar">مصحفي</span>
+      </div>
+      <div class="dates">
+        <span class="date-chip">Effective&nbsp;<b>January 1, 2025</b></span>
+        <span class="date-chip">Last updated&nbsp;<b>June 27, 2026</b></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <nav class="toc" aria-label="Contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#who-we-are">1 · Who We Are</a></li>
+      <li><a href="#not-collected">2 · What We Don't Collect</a></li>
+      <li><a href="#local-storage">3 · Local Storage on Your Device</a></li>
+      <li><a href="#how-we-use">4 · How We Use Information</a></li>
+      <li><a href="#external">5 · External Services</a></li>
+      <li><a href="#cookies">6 · Cookies</a></li>
+      <li><a href="#security">7 · Data Security and Protection</a></li>
+      <li><a href="#your-rights">8 · Your Rights as a User</a></li>
+      <li><a href="#children">9 · Children's Privacy</a></li>
+      <li><a href="#updates">10 · Updates and Changes</a></li>
+      <li><a href="#contact">11 · Contact Us</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <p class="lede">
+      mushafi - مصحفي is an app dedicated to reading the Holy Quran and browsing
+      its noble verses with ease, available via browser and as a standalone
+      desktop application, with comprehensive support for dozens of languages
+      and translations. We believe that user privacy is a fundamental right, and
+      we are committed to full transparency regarding your data. This document
+      explains precisely what we collect and what we don't, and how we handle
+      any data.
+    </p>
+
+    <section id="who-we-are">
+      <h2><span class="num">1</span> Who We Are</h2>
+      <p>
+        mushafi - مصحفي is an app that allows users to read the Holy Quran,
+        available in two versions: a web app used directly through the browser,
+        and a standalone desktop app installed on the computer. The app is
+        non-commercial, requires no registration or account creation, and is
+        designed to be a clean, safe means of connecting with the Book of Allah.
+      </p>
+    </section>
+
+    <section id="not-collected">
+      <h2><span class="num">2</span> What We Don't Collect — An Explicit Declaration</h2>
+      <div class="declaration">
+        <p>mushafi - مصحفي does not collect any personal data, including:</p>
+        <ul>
+          <li>Name, email address, or phone number</li>
+          <li>Passwords or account information — no login system exists</li>
+          <li>Payment data or financial information of any kind</li>
+          <li>Geographic location data</li>
+          <li>Browsing behavior or reading patterns</li>
+          <li>Cookies for tracking or advertising purposes</li>
+          <li>Any information that allows identification of your personal identity</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="local-storage">
+      <h2><span class="num">3</span> Local Storage on Your Device</h2>
+      <p>
+        The app uses the local storage built into your browser or operating
+        system to save your personal preferences between sessions. This data
+        stays exclusively on your device and is never sent to any server at any
+        time, including:
+      </p>
+      <ul>
+        <li>Anonymous user identifier for session tracking</li>
+        <li>Last surah or page you reached in your recitation</li>
+        <li>Selected language for the app interface</li>
+        <li>Preferred translation or commentary</li>
+        <li>Font size and display style preferences</li>
+        <li>Dark or light mode</li>
+        <li>App settings and reading preferences</li>
+        <li>Technical error logs for performance improvement</li>
+      </ul>
+      <p>
+        You can delete this data at any time from the app or browser settings
+        without any external effect.
+      </p>
+    </section>
+
+    <section id="how-we-use">
+      <h2><span class="num">4</span> How We Use Information</h2>
+      <p>The data saved locally on your device is used exclusively for:</p>
+      <ul>
+        <li>Improving app performance and fixing bugs</li>
+        <li>Providing a personalized user experience</li>
+        <li>Sending new app updates</li>
+      </ul>
+    </section>
+
+    <section id="external">
+      <h2><span class="num">5</span> External Services</h2>
+      <p>
+        mushafi - مصحفي relies on external services to provide Quran texts,
+        translations, and some technical resources. When loading this content,
+        limited technical data may be recorded with these service providers
+        according to their own privacy policies, which is outside the direct
+        control of the app.
+      </p>
+      <p>
+        We strive to select highly reliable external services while minimizing
+        dependence on them to the lowest possible level.
+      </p>
+    </section>
+
+    <section id="cookies">
+      <h2><span class="num">6</span> Cookies</h2>
+      <p>
+        mushafi - مصحفي does not use cookies for any tracking, analytical, or
+        advertising purposes. The app is completely free from any analytics
+        systems, advertising networks, or external tracking codes.
+      </p>
+      <p>
+        Some external services may independently create limited technical
+        cookies, which is outside the app's direct control.
+      </p>
+    </section>
+
+    <section id="security">
+      <h2><span class="num">7</span> Data Security and Protection</h2>
+      <p>mushafi - مصحفي applies technical security standards including:</p>
+      <ul>
+        <li><strong>Encrypted communications:</strong> All web version communications are encrypted with a valid SSL/TLS certificate</li>
+        <li><strong>No user database:</strong> No system for registering accounts or storing user data exists</li>
+        <li><strong>Regular updates:</strong> Continuous review of dependencies and libraries to ensure app security in both versions</li>
+      </ul>
+      <p>
+        All data is encrypted and protected. We do not sell your data to any
+        third party and do not share it except when legally required.
+      </p>
+    </section>
+
+    <section id="your-rights">
+      <h2><span class="num">8</span> Your Rights as a User</h2>
+      <p>
+        Since mushafi - مصحفي does not collect personal data, your privacy is
+        fully protected from the outset. Regardless, you have the right to:
+      </p>
+      <ul>
+        <li><strong>Inquiry:</strong> Ask at any time about the types of data we handle</li>
+        <li><strong>Deletion:</strong> Remove local storage data from your device whenever you wish</li>
+        <li><strong>Transparency:</strong> Access this policy and its updates at all times</li>
+        <li><strong>Exit:</strong> Use or stop using the app without any restrictions or consequences</li>
+      </ul>
+    </section>
+
+    <section id="children">
+      <h2><span class="num">9</span> Children's Privacy</h2>
+      <p>
+        mushafi - مصحفي is suitable for all ages including children, as it is
+        limited to presenting the Holy Quran. Since the app does not collect any
+        personal data from any user regardless of age, it provides a naturally
+        safe environment.
+      </p>
+    </section>
+
+    <section id="updates">
+      <h2><span class="num">10</span> Updates and Changes to This Policy</h2>
+      <p>
+        We may update this policy from time to time to reflect any changes in the
+        app or legal requirements. In the event of significant changes:
+      </p>
+      <ul>
+        <li>The "Last Updated" date at the top of this document will be updated</li>
+        <li>The new version will be published immediately</li>
+        <li>Your continued use of the app after the update is considered implicit consent to the updated policy</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2><span class="num">11</span> Contact Us</h2>
+      <p>
+        If you have any questions or comments regarding the privacy policy, you
+        can contact us via email:
+      </p>
+      <div class="contact">
+        <a href="mailto:mbrwky97@gmail.com">mbrwky97@gmail.com</a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span>All rights reserved © 2026 mushafi &middot; <span class="ar" lang="ar">مصحفي</span></span>
+    <a href="#" style="color: var(--ink-3); text-decoration: none;">Back to top ↑</a>
+  </div>
+</footer>
+
+</body>
+</html>
